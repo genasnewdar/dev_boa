@@ -1,6 +1,6 @@
-// next.config.js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   env: {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
@@ -13,22 +13,15 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**',
+        protocol: "https",
+        hostname: "**",
       },
       {
-        protocol: 'http',
-        hostname: '**',
-      }
+        protocol: "http",
+        hostname: "**",
+      },
     ],
   },
 };
 
-// module.exports = nextConfig;
-
-module.exports = {
-  experimental: {
-    appDir: true,
-  },
-};
-
+export default nextConfig;
